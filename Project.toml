@@ -1,0 +1,15 @@
+name = "Amincoacid_to_RNA_Translation"
+uuid = "1e468ec5-d64c-4f7b-8748-8e922e548c9d"
+authors = ["Kathatinka <Kathatinka@users.noreply.github.com>"]
+version = "0.1.0"
+
+[deps]
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
+
+[compat]
+julia = "^1"
