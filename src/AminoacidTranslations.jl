@@ -1,4 +1,4 @@
-module Amincoacid_to_RNA_Translation
+module AminoacidTranslations
 
 using BioSequences
 
