@@ -1,15 +1,20 @@
-name = "Amincoacid_to_RNA_Translation"
+name = "AmincoacidTranslation"
 uuid = "1e468ec5-d64c-4f7b-8748-8e922e548c9d"
 authors = ["Kathatinka <Kathatinka@users.noreply.github.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
+BioSequences = "7e6ae17a-c86d-528c-b3b9-7f778a29fe59"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Gumbo = "708ec375-b3d6-5a57-a7ce-8257bf98657a"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+SplitApplyCombine = "03a91e81-4c3e-53e1-a0a4-9c0c8f19dd66"
+
+[compat]
+julia = "^1"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
 test = ["Test"]
-
-[compat]
-julia = "^1"
