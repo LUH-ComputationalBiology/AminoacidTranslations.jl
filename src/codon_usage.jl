@@ -20,7 +20,7 @@ Fetches the codon usage table of species from http://www.kazusa.or.jp/codon/.
     14: Flatworm Mitochondrial
     15: Blepharisma Nuclear Code
 
-Returns a DataFrame.
+Returns a DataFrame containing aminoacids, their codons and codon-fraction, but no stop codons
 """
 function get_codon_usage(; species = 9606, aa=1)
     r = HTTP.get("http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=$species&aa=$aa&style=N")
@@ -31,7 +31,6 @@ function get_codon_usage(; species = 9606, aa=1)
         push!(df,
             (Codon = RNACodon(entries[1]), AminoAcid = AminoAcid(only(entries[2])), fraction = parse(Float64, entries[3]))
         )
-        # TODO: there are 2 more entries which I don't know what they mean
     end
     return df
 end
