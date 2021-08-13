@@ -1,5 +1,6 @@
 using HTTP: get
 using Gumbo: parsehtml
+using DataFrames
 
 """
 Fetches the codon usage table of species from http://www.kazusa.or.jp/codon/.
