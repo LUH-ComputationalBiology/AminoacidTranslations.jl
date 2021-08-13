@@ -1,7 +1,7 @@
-name = "Amincoacid_to_RNA_Translation"
+name = "AmincoacidTranslation"
 uuid = "1e468ec5-d64c-4f7b-8748-8e922e548c9d"
 authors = ["Kathatinka <Kathatinka@users.noreply.github.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 BioSequences = "7e6ae17a-c86d-528c-b3b9-7f778a29fe59"
