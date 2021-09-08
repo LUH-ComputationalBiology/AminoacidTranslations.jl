@@ -13,22 +13,30 @@
 [![Documentation](https://img.shields.io/badge/docs-master-blue.svg)](https://Kathatinka.github.io/Amincoacid_to_RNA_Translation.jl/dev)
 -->
 Getting the corresponding RNA- or DNA-Codons for single aminoacids or aminoacid sequences. For the translation the single letter code of the aminoacids is used. 
+## Installation
+```julia
+import Pkg
+Pkg.add(url="https://github.com/Kathatinka/AminoacidTranslations.jl")
+```
 
-# Functions
-<div>
-<p>
-  To get the codons for a <b>single aminoacid</b> use: <br>
-AminoacidTranslations.translate(AA_*) *represents the single letter code of the desired aminoacid<br>
-AminoacidTranslations.translate(AA_R) returns (CGU, GCC, GCA, GCG)<br>
-</p> </div> <div> <p>
-To get the codons for an <b>aminoacid sequence</b> use:<br>
-AminoacidTranslations.translate.(aa"sequence")<br>
-AminoacidTranslations.translate.(aa"FGLM") returns <br>
-3-element Vector{Tuple{Mer{RNAAlphabet{2}, 3}, Mer{RNAAlphabet{2}, 3}, Vararg{Mer{RNAAlphabet{2}, 3}, N} where N}}:<br>
- (UUU, UUC)<br>
- (GGU, GGC, GGA, GGG)<br>
- (UUA, UUG, CUU, CUC, CUA, CUG)<br>
+## Functions
+To get the codons for a **single aminoacid** use:
+`AminoacidTranslations.translate(AA_*)` *represents the single letter code of the desired aminoacid
+`AminoacidTranslations.translate(AA_R)` returns `(CGU, GCC, GCA, GCG)`
+To get the codons for an **aminoacid sequence** use:
+```julia<br>
+AminoacidTranslations.translate.(aa"FGLM")
+3-element Vector{Tuple{Mer{RNAAlphabet{2}, 3}, Mer{RNAAlphabet{2}, 3}, Vararg{Mer{RNAAlphabet{2}, 3}, N} where N}}:
+ (UUU, UUC)
+ (GGU, GGC, GGA, GGG)
+ (UUA, UUG, CUU, CUC, CUA, CUG)
 AUG 
-</div>
-Both functions return the RNA-Codons by default. With the keyword argument "to=DNA", this setting can be switched and then returns the DNA-Codons. <br>
-<strong>Example:</strong> AminoacidTranslations.translate(AA_R,to=DNA) now returns (CGT, GCC, GCA, GCG)
+```
+
+Both functions return the RNA-Codons by default. With the keyword argument `to=:DNA`, this setting can be switched and then returns the DNA-Codons.
+
+Example: 
+```julia
+AminoacidTranslations.translate(AA_R,to=:DNA)
+(CGT, GCC, GCA, GCG)
+```
