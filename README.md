@@ -33,10 +33,10 @@ AminoacidTranslations.translate.(aa"FGLM")
 AUG 
 ```
 
-Both functions return the RNA-Codons by default. With the keyword argument `to=:DNA`, this setting can be switched and then returns the DNA-Codons.
+Both functions return the RNA-Codons by default. With the keyword argument `to=DNA`, this setting can be switched and then returns the DNA-Codons.
 
 Example: 
 ```julia
-AminoacidTranslations.translate(AA_R,to=:DNA)
+AminoacidTranslations.translate(AA_R,to=DNA)
 (CGT, GCC, GCA, GCG)
 ```
