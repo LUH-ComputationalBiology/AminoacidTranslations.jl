@@ -1,4 +1,4 @@
-using HTTP: get
+using HTTP: HTTP, get
 using Gumbo: parsehtml
 using DataFrames
 
