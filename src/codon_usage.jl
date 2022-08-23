@@ -26,7 +26,7 @@ function get_codon_usage(; species = 9606, aa=1)
     r = HTTP.get("http://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=$species&aa=$aa&style=N")
     table_string = parsehtml(String(r.body)).root[2][7][1].text
     df = DataFrame()
-    for match in eachmatch(r"[AUGC]{3} [A-Z] \d\.\d\d [\d\s]\d\.\d \(\d+\)", table_string)
+    for match in eachmatch(r"[AUGC]{3} [A-Z] \d\.\d\d [\d\s]\d\.\d", table_string)
         entries = split(match.match)
         push!(df,
             (Codon = RNACodon(entries[1]), AminoAcid = AminoAcid(only(entries[2])), fraction = parse(Float64, entries[3]))
